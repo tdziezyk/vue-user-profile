@@ -55,7 +55,7 @@ export default Vue.extend({
         { icon: "mdi-phone-outline", label: "Phone", value: phone },
         {
           icon: "mdi-calendar-blank-outline",
-          label: "Birthday",
+          label: "Date of birth",
           value: birthday,
         },
         { icon: "mdi-note-outline", label: "About", value: about },

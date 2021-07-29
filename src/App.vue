@@ -17,7 +17,7 @@
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <img class="logo" src="./assets/logo.png" alt="Profile App" />
+      <app-logo />
     </v-app-bar>
 
     <div class="main-and-footer-wrapper">
@@ -35,12 +35,14 @@
 import Vue from "vue";
 import MenuItem from "@/components/MenuItem.vue";
 import AppFooter from "@/components/AppFooter.vue";
+import AppLogo from "@/components/AppLogo.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
     AppFooter,
     MenuItem,
+    AppLogo,
   },
 
   data: () => ({
@@ -50,10 +52,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.logo {
-  height: 100%;
-}
-
 .main-and-footer-wrapper {
   display: flex;
   flex-direction: column;
