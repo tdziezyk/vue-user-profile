@@ -22,6 +22,12 @@ const routes: Array<RouteConfig> = [
     name: AppRoutes.ProfilePreview,
     component: UserProfilePreview,
   },
+  {
+    path: "*",
+    redirect: {
+      name: AppRoutes.EditProfile,
+    },
+  },
 ];
 
 const router = new VueRouter({
