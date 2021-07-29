@@ -203,5 +203,6 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .preview-wrapper {
+  margin-left: 0;
 }
 </style>
