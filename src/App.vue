@@ -75,5 +75,10 @@ window.addEventListener("keydown", (event: KeyboardEvent) => {
 .main-and-footer-wrapper {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+
+  & > .v-mine {
+    flex-grow: 1;
+  }
 }
 </style>
