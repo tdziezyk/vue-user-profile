@@ -11,7 +11,7 @@
       nulla. Nam id neque libero. Cras quis aliquam massa.
     </div>
     <div class="git-repo">
-      <a :href="repoData.href"
+      <a :href="repoData.href" target="_blank"
         ><v-icon>mdi-github</v-icon> {{ repoData.name }}</a
       >
     </div>
