@@ -11,8 +11,9 @@ export enum AppRoutes {
 }
 
 const routes: Array<RouteConfig> = [
+  { path: "/", redirect: { name: AppRoutes.EditProfile } },
   {
-    path: "/",
+    path: "/edit",
     name: AppRoutes.EditProfile,
     component: EditProfile,
   },
