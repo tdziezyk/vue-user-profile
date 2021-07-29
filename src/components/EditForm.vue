@@ -45,7 +45,7 @@
         accept="image/png, image/jpeg, image/bmp"
         show-size
       />
-      <v-row justify="center">
+      <v-row class="preview-wrapper">
         <v-avatar v-if="avatarPreview" color="grey" size="164">
           <v-img :src="avatarPreview" />
         </v-avatar>
@@ -200,4 +200,7 @@ export default Vue.extend({
   },
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.preview-wrapper {
+}
+</style>

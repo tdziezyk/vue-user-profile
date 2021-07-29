@@ -1,5 +1,10 @@
 <template>
-  <v-footer color="primary lighten-2" class="app-footer">
+  <v-footer
+    color="primary lighten-2 white--text"
+    class="app-footer"
+    app
+    :absolute="false"
+  >
     <div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
       rhoncus turpis. Vestibulum ante tortor, gravida id consequat a, finibus et
