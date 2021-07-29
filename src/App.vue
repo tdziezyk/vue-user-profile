@@ -2,26 +2,16 @@
   <v-app>
     <v-navigation-drawer v-model="drawer" app color="primary">
       <v-list nav dense>
-        <v-list-item
-          :to="{ name: 'EditProfile' }"
-          exact-active-class="active-link"
-          class="white--text"
-        >
-          <v-list-item-icon>
-            <v-icon class="menu-icon">mdi-account-edit-outline </v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>Edit profile</v-list-item-title>
-        </v-list-item>
-        <v-list-item
-          :to="{ name: 'ProfilePreview' }"
-          exact-active-class="active-link"
-          class="white--text"
-        >
-          <v-list-item-icon>
-            <v-icon class="menu-icon">mdi-account-outline </v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>View profile</v-list-item-title>
-        </v-list-item>
+        <menu-item
+          routeName="EditProfile"
+          icon="mdi-account-edit-outline"
+          label="Edit profile"
+        />
+        <menu-item
+          routeName="ProfilePreview"
+          icon="mdi-account-outline"
+          label="View profile"
+        />
       </v-list>
     </v-navigation-drawer>
 
@@ -43,12 +33,14 @@
 
 <script lang="ts">
 import Vue from "vue";
+import MenuItem from "@/components/MenuItem.vue";
 import AppFooter from "@/components/AppFooter.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
     AppFooter,
+    MenuItem,
   },
 
   data: () => ({
@@ -65,14 +57,5 @@ export default Vue.extend({
 .main-and-footer-wrapper {
   display: flex;
   flex-direction: column;
-}
-
-.menu-icon {
-  color: white;
-}
-</style>
-<style lang="scss">
-.active-link {
-  background: var(--v-primary-lighten1);
 }
 </style>
