@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="date-picker">
     <v-menu
       v-model="isMenuOpen"
       :close-on-content-click="false"
@@ -63,3 +63,8 @@ export default Vue.extend({
   },
 });
 </script>
+<style lang="scss" scoped>
+.date-picker {
+  padding-top: 20px;
+}
+</style>

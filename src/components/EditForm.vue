@@ -37,14 +37,6 @@
         @input="onPhoneInput"
         @blur="$v.phone.$touch()"
       />
-      <v-textarea
-        v-model="userData.about"
-        :error-messages="formErrors.about"
-        :counter="formData.ABOUT_LENGTH"
-        label="A few words about you"
-        @input="$v.about.$touch()"
-        @blur="$v.about.$touch()"
-      />
       <v-file-input
         @change="setAvatarPreview"
         v-model="userData.avatar"
@@ -52,10 +44,22 @@
         label="Avatar"
         accept="image/png, image/jpeg, image/bmp"
         show-size
-        prepend-icon="mdi-camera"
       />
-      <v-img v-if="avatarPreview" :src="avatarPreview" />
+      <v-row justify="center">
+        <v-avatar v-if="avatarPreview" color="grey" size="164">
+          <v-img :src="avatarPreview" />
+        </v-avatar>
+      </v-row>
       <date-picker :value="userData.birthday" @input="onBirthday" />
+      <v-textarea
+        v-model="userData.about"
+        :error-messages="formErrors.about"
+        :counter="formData.ABOUT_LENGTH"
+        :rows="3"
+        label="A few words about you"
+        @input="$v.about.$touch()"
+        @blur="$v.about.$touch()"
+      />
       <v-btn color="primary" @click="onSubmit">Save</v-btn>
     </v-form>
   </v-container>
@@ -196,3 +200,4 @@ export default Vue.extend({
   },
 });
 </script>
+<style lang="scss" scoped></style>

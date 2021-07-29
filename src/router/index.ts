@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import EditProfile from "../views/EditProfile.vue";
-import About from "../views/About.vue";
+import UserProfilePreview from "../views/UserProfilePreview.vue";
 
 Vue.use(VueRouter);
 
@@ -12,9 +12,9 @@ const routes: Array<RouteConfig> = [
     component: EditProfile,
   },
   {
-    path: "/about",
+    path: "/preview",
     name: "ProfilePreview",
-    component: About,
+    component: UserProfilePreview,
   },
 ];
 
