@@ -1,68 +1,70 @@
 <template>
   <v-container>
-    <v-form ref="form">
-      <v-text-field
-        v-model="userData.firstName"
-        :error-messages="formErrors.firstName"
-        :counter="formData.FIRST_NAME_LENGTH"
-        label="First name"
-        required
-        @input="$v.firstName.$touch()"
-        @blur="$v.firstName.$touch()"
-      />
-      <v-text-field
-        v-model="userData.lastName"
-        :error-messages="formErrors.lastName"
-        :counter="formData.LAST_NAME_LENGTH"
-        label="Last name"
-        required
-        @input="$v.lastName.$touch()"
-        @blur="$v.lastName.$touch()"
-      />
-      <v-text-field
-        v-model="userData.email"
-        :error-messages="formErrors.email"
-        :counter="formData.EMAIL_LENGTH"
-        label="E-mail"
-        type="email"
-        required
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
-      />
-      <vue-tel-input-vuetify
-        v-model="userData.phone"
-        defaultCountry="PL"
-        mode="international"
-        :error-messages="formErrors.phone"
-        @input="onPhoneInput"
-        @blur="$v.phone.$touch()"
-      />
-      <v-file-input
-        @change="setAvatarPreview"
-        v-model="userData.avatar"
-        :error-messages="formErrors.avatar"
-        prepend-icon=""
-        label="Avatar"
-        accept="image/png, image/jpeg, image/bmp"
-        show-size
-      />
-      <v-row class="preview-wrapper">
-        <v-avatar v-if="avatarPreview" color="grey" size="164">
-          <v-img :src="avatarPreview" />
-        </v-avatar>
-      </v-row>
-      <date-picker :value="userData.birthday" @input="onBirthday" />
-      <v-textarea
-        v-model="userData.about"
-        :error-messages="formErrors.about"
-        :counter="formData.ABOUT_LENGTH"
-        :rows="3"
-        label="A few words about you"
-        @input="$v.about.$touch()"
-        @blur="$v.about.$touch()"
-      />
-      <v-btn color="primary" @click="onSubmit">Save</v-btn>
-    </v-form>
+    <v-card class="pa-4">
+      <v-form ref="form">
+        <v-text-field
+          v-model="userData.firstName"
+          :error-messages="formErrors.firstName"
+          :counter="formData.FIRST_NAME_LENGTH"
+          label="First name"
+          required
+          @input="$v.firstName.$touch()"
+          @blur="$v.firstName.$touch()"
+        />
+        <v-text-field
+          v-model="userData.lastName"
+          :error-messages="formErrors.lastName"
+          :counter="formData.LAST_NAME_LENGTH"
+          label="Last name"
+          required
+          @input="$v.lastName.$touch()"
+          @blur="$v.lastName.$touch()"
+        />
+        <v-text-field
+          v-model="userData.email"
+          :error-messages="formErrors.email"
+          :counter="formData.EMAIL_LENGTH"
+          label="E-mail"
+          type="email"
+          required
+          @input="$v.email.$touch()"
+          @blur="$v.email.$touch()"
+        />
+        <vue-tel-input-vuetify
+          v-model="userData.phone"
+          defaultCountry="PL"
+          mode="international"
+          :error-messages="formErrors.phone"
+          @input="onPhoneInput"
+          @blur="$v.phone.$touch()"
+        />
+        <v-file-input
+          @change="setAvatarPreview"
+          v-model="userData.avatar"
+          :error-messages="formErrors.avatar"
+          prepend-icon=""
+          label="Avatar"
+          accept="image/png, image/jpeg, image/bmp"
+          show-size
+        />
+        <v-row class="preview-wrapper">
+          <v-avatar v-if="avatarPreview" color="grey" size="164">
+            <v-img :src="avatarPreview" />
+          </v-avatar>
+        </v-row>
+        <date-picker :value="userData.birthday" @input="onBirthday" />
+        <v-textarea
+          v-model="userData.about"
+          :error-messages="formErrors.about"
+          :counter="formData.ABOUT_LENGTH"
+          :rows="3"
+          label="A few words about you"
+          @input="$v.about.$touch()"
+          @blur="$v.about.$touch()"
+        />
+        <v-btn color="primary" @click="onSubmit">Save</v-btn>
+      </v-form>
+    </v-card>
   </v-container>
 </template>
 
