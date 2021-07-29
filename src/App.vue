@@ -25,19 +25,19 @@
     <v-main>
       <router-view />
     </v-main>
-    <v-footer>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-      rhoncus turpis. Vestibulum ante tortor, gravida id consequat a, finibus et
-      nulla. Nam id neque libero. Cras quis aliquam massa.
-    </v-footer>
+    <app-footer />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import AppFooter from "@/components/AppFooter.vue";
 
 export default Vue.extend({
   name: "App",
+  components: {
+    AppFooter,
+  },
 
   data: () => ({
     drawer: null,
