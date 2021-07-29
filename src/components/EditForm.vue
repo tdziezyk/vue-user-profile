@@ -74,6 +74,7 @@ import { required, email, maxLength, helpers } from "@vuelidate/validators";
 import DatePicker from "./DatePicker.vue";
 import { saveUserData, loadUserData } from "@/helpers/userDataHelper";
 import { UserData } from "@/@types/UserData";
+import router, { AppRoutes } from "@/router/index";
 
 export default Vue.extend({
   name: "EditForm",
@@ -184,6 +185,7 @@ export default Vue.extend({
       };
 
       saveUserData(data);
+      router.push({ name: AppRoutes.ProfilePreview });
     };
 
     return {

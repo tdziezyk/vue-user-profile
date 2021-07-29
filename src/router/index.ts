@@ -5,15 +5,20 @@ import UserProfilePreview from "../views/UserProfilePreview.vue";
 
 Vue.use(VueRouter);
 
+export enum AppRoutes {
+  EditProfile = "EditProfile",
+  ProfilePreview = "ProfilePreview",
+}
+
 const routes: Array<RouteConfig> = [
   {
     path: "/",
-    name: "EditProfile",
+    name: AppRoutes.EditProfile,
     component: EditProfile,
   },
   {
     path: "/preview",
-    name: "ProfilePreview",
+    name: AppRoutes.ProfilePreview,
     component: UserProfilePreview,
   },
 ];
