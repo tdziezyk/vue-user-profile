@@ -41,6 +41,7 @@
         @change="setAvatarPreview"
         v-model="userData.avatar"
         :error-messages="formErrors.avatar"
+        prepend-icon=""
         label="Avatar"
         accept="image/png, image/jpeg, image/bmp"
         show-size

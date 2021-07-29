@@ -11,7 +11,6 @@
         <v-text-field
           :value="value"
           label="Birthday date"
-          prepend-icon="mdi-calendar"
           readonly
           v-bind="attrs"
           v-on="on"
