@@ -1,10 +1,5 @@
 <template>
-  <v-footer
-    color="primary lighten-2 white--text"
-    class="app-footer"
-    app
-    :absolute="false"
-  >
+  <v-footer color="primary lighten-2 white--text" class="app-footer">
     <div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
       rhoncus turpis. Vestibulum ante tortor, gravida id consequat a, finibus et
@@ -39,6 +34,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .app-footer {
   padding: 10px;
+  z-index: 6;
 
   a {
     color: white;

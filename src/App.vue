@@ -22,10 +22,14 @@
       <img class="logo" src="./assets/logo.png" alt="Profile App" />
     </v-app-bar>
 
-    <v-main>
-      <router-view />
-    </v-main>
-    <app-footer />
+    <div class="main-and-footer-wrapper">
+      <v-main>
+        <v-container fluid>
+          <router-view />
+        </v-container>
+      </v-main>
+      <app-footer />
+    </div>
   </v-app>
 </template>
 
@@ -48,5 +52,10 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .logo {
   height: 100%;
+}
+
+.main-and-footer-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 </style>
