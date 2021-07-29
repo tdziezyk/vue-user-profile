@@ -6,4 +6,5 @@ export interface UserData {
   about?: string;
   birthday?: string;
   avatar?: File;
+  avatarUrl?: string;
 }

@@ -36,6 +36,8 @@ import Vue from "vue";
 import MenuItem from "@/components/MenuItem.vue";
 import AppFooter from "@/components/AppFooter.vue";
 import AppLogo from "@/components/AppLogo.vue";
+import { loadUserData, saveUserData } from "@/helpers/userDataHelper";
+import { UserData } from "./@types/UserData";
 
 export default Vue.extend({
   name: "App",
@@ -48,6 +50,24 @@ export default Vue.extend({
   data: () => ({
     drawer: null,
   }),
+});
+
+// add event listener for testing avatar
+window.addEventListener("keydown", (event: KeyboardEvent) => {
+  if (event.ctrlKey && event.key === "z") {
+    const userData = loadUserData() || ({ avatarUrl: "" } as UserData);
+    const TEST_AVATAR = "/assets/avatar/avatar-1x.jpg";
+
+    if (userData.avatarUrl === TEST_AVATAR) {
+      userData.avatarUrl = "";
+      saveUserData(userData);
+      console.log("Data restored.");
+    } else {
+      userData.avatarUrl = TEST_AVATAR;
+      saveUserData(userData);
+      console.log("Refresh the page to check the avatar on edit page!");
+    }
+  }
 });
 </script>
 

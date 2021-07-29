@@ -1,15 +1,15 @@
 <template>
   <img
     class="app-logo"
-    src="/img/logo-149w.png"
+    src="/assets/logo/logo-149w.png"
     alt="Profile App"
     srcset="
-      img/logo-128w.png 128w,
-      img/logo-149w.png 149w,
-      img/logo-256w.png 256w,
-      img/logo-298w.png 298w,
-      img/logo-348w.png 348w,
-      img/logo-447w.png 447w
+      /assets/logo/logo-128w.png 128w,
+      /assets/logo/logo-149w.png 149w,
+      /assets/logo/logo-256w.png 256w,
+      /assets/logo/logo-298w.png 298w,
+      /assets/logo/logo-348w.png 348w,
+      /assets/logo/logo-447w.png 447w
     "
     sizes="(max-width: 959px) 128px, 149px"
   />

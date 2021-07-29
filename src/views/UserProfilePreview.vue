@@ -4,8 +4,15 @@
       <v-card-title>User Profile</v-card-title>
       <v-list class="transparent" v-if="userData">
         <v-list-item class="justify-center">
-          <v-avatar color="grey" size="128" v-if="userData.avatar">
-            <v-img :src="userData.avatar"></v-img>
+          <v-avatar color="grey" size="128" v-if="userData.avatarUrl">
+            <v-img
+              :src="userData.avatarUrl"
+              srcset="
+                /assets/avatar/avatar-1x.jpg 1x,
+                /assets/avatar/avatar-1_5x.jpg 1.5x,
+                /assets/avatar/avatar-2x.jpg 2x,
+                /assets/avatar/avatar-3x.jpg 3x"
+            ></v-img>
           </v-avatar>
           <v-icon v-else class="no-avatar-image"
             >mdi-account-circle-outline</v-icon
@@ -50,7 +57,7 @@ export default Vue.extend({
           label: "First name",
           value: firstName,
         },
-        { icon: "", label: "Last name", value: lastName },
+        { icon: "mdi-account-outline", label: "Last name", value: lastName },
         { icon: "mdi-email-outline", label: "Email", value: email },
         { icon: "mdi-phone-outline", label: "Phone", value: phone },
         {
