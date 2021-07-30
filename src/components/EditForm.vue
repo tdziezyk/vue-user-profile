@@ -34,6 +34,7 @@
           v-model="userData.phone"
           defaultCountry="PL"
           mode="international"
+          label="Phone number"
           :error-messages="formErrors.phone"
           @input="onPhoneInput"
           @blur="$v.phone.$touch()"

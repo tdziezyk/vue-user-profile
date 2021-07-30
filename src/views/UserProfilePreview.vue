@@ -1,7 +1,9 @@
 <template>
   <v-container>
     <v-card elevation="2">
-      <v-card-title>User Profile</v-card-title>
+      <v-card-title class="justify-center profile-header"
+        >User Profile</v-card-title
+      >
       <v-list class="transparent" v-if="userData">
         <v-list-item class="justify-center">
           <v-avatar color="grey" size="128" v-if="userData.avatarUrl">
@@ -19,11 +21,13 @@
           >
         </v-list-item>
         <v-list-item v-for="item in profileTextData" :key="item.label">
-          <v-list-item-icon>
+          <v-list-item-icon class="mr-3">
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>{{ item.label }}</v-list-item-title>
-          <v-list-item-subtitle class="text-right">
+          <v-list-item-title class="user-data-label">{{
+            item.label
+          }}</v-list-item-title>
+          <v-list-item-subtitle class="text-right user-data-value">
             {{ item.value }}
           </v-list-item-subtitle>
         </v-list-item>
@@ -79,5 +83,16 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .no-avatar-image {
   font-size: 128px;
+}
+
+.profile-header {
+  color: var(--v-primary-lighten1);
+}
+.user-data-label {
+  color: var(--v-secondary-lighten1);
+}
+
+.v-list-item__subtitle.user-data-value {
+  color: var(--v-secondary-darken1);
 }
 </style>
