@@ -29,7 +29,7 @@
         </v-list-item>
       </v-list>
       <v-card-text v-else>
-        No user data. Please to the the edit profile page.
+        No user data. Please go to the the edit profile page.
       </v-card-text>
     </v-card>
   </v-container>
